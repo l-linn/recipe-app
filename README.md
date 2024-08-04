@@ -27,14 +27,14 @@ To achieve the user goals, your application will need the following features:
 
 ### Installing
 
-* How/where to download your program
-* Any modifications needed to be made to files/folders
+* Install Django
+* Run server
+
 
 ### Executing program
 
-* How to run the program
-* Step-by-step bullets
+
 
 ```
-code blocks for commands
+
 ```
