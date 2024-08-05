@@ -36,5 +36,5 @@ To achieve the user goals, your application will need the following features:
 
 
 ```
-
+python manage.py runserver
 ```
