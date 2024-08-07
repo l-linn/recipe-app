@@ -6,12 +6,11 @@ from .models import Recipe
 class RecipeTestCase(TestCase):
     def setUpTestData():
         Recipe.objects.create(
-            name="",
+            name="Tea",
             cooking_time=5,
-            difficulty="",  # this is set as a choice
+            difficulty="easy",  # this is set as a choice
             serves=1,
-            ingredients="",
-            methods="",
+            methods="boil the water, put the tea in",
         )
 
     def testRecipeName(self):

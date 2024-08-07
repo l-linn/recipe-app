@@ -4,11 +4,11 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 class Cook(models.Model):
-    user = models.OneToOneField(
-        User, on_delete=models.CASCADE, null=True
-    )  # what to set as default or it doesn't matter too much?
+    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
 
-    fav_recipes = models.ManyToManyField("recipes.Recipe", null=True)
+    fav_recipes = models.ManyToManyField(
+        "recipes.Recipe", null=True, related_name="recipes_fav"
+    )
 
     def __str__(self):
-        return str(self.name)
+        return self.user.username
