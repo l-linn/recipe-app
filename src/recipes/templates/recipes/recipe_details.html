@@ -1,0 +1,15 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'recipes/css/recipe_details.css' %}">
+  <title>{{object.name}}</title>
+</head>
+<body>
+  {{object.name}}
+  <img src="{{object.pic.url}}" width="200" height="200" />
+  {{object.cook}} {{object.serves}} {{object.cooking_time}} min
+</body>
+</html>

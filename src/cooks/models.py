@@ -6,9 +6,7 @@ from django.contrib.auth.models import User
 class Cook(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
 
-    fav_recipes = models.ManyToManyField(
-        "recipes.Recipe", null=True, related_name="recipes_fav"
-    )
+    fav_recipes = models.ManyToManyField("recipes.Recipe", related_name="recipes_fav")
 
     pic = models.ImageField(upload_to="recipes", default="no_picture.png")
 

@@ -1,12 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Sue+Ellen+Francisco&display=swap');
-
+:root {
+  --clr-primary-400: #0097b2;
+  --clr-primary-500: #3d6781;
+  --clr-secondary-200: #f2ebe3;
+  --clr-neutral-400: #6c7289;
+  --clr-neutral-100: #ffffff;
+}
 /*
   1. Use a more-intuitive box-sizing model.
 */
 *, *::before, *::after {
   box-sizing: border-box;
 }
-
 /*
   2. Remove default margin
 */
@@ -47,15 +52,21 @@ p, h1, h2, h3, h4, h5, h6 {
 #root, #__next {
   isolation: isolate;
 }
+/* general styling */
 
 body {
-  margin: 0 auto;
-  background-color: #fff0de;
   font-family: "Sue Ellen Francisco", cursive;
   font-weight: 400;
   font-style: normal;
+  font-size: 1rem;
+  color: var(--clr-neutral-400);
+  background-color: var(--clr-secondary-200);
+  /* for this project only */
+  display: grid;
+  place-content: center;
 }
 
-.welcome {
-  display: flex;
+
+img {
+  border-radius: 20px;
 }

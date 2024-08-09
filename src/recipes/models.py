@@ -1,4 +1,5 @@
 from django.db import models
+from django.shortcuts import reverse
 
 
 # Create your models here.
@@ -33,6 +34,9 @@ class Recipe(models.Model):
     methods = models.TextField()
 
     pic = models.ImageField(upload_to="recipes", default="no_picture.png")
+
+    def get_absolute_url(self):
+        return reverse("recipes:detail", kwargs={"pk": self.pk})
 
     def __str__(self):
         return f"{self.name} - {self.cook} - {self.cooking_time} - {self.difficulty}"

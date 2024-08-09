@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'recipes/css/all_recipes.css' %}">
+  <title>Recipes</title>
+</head>
+<body>
+  {% for object in object_list %} 
+  <a href ="{{object.get_absolute_url}}"> {{object.name}} </a>
+  <img src="{{object.pic.url}}" width="200" height="200" />
+  <br>
+  {% endfor %}
+  
+</body>
+</html>
+
+
+

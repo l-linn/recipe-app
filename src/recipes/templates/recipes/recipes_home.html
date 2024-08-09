@@ -5,26 +5,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="{% static 'recipes/css/styles.css' %}">
+  <link rel="stylesheet" href="{% static 'recipes/css/recipes_home.css' %}">
   <title>Recipe Book</title>
 </head>
 <body>
   <main>
-    <section class="welcome">
-      <div class="greetings">
-        <p>Hello! Welcome to Your Recipe Book</p>
-        <h3>What do you fancy today?</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-          nisi ut aliquip ex ea commodo conse</p>
-      </div>
-      <div class ="user-login-or-register">
-        <button>Log in</button>
-        <button>Join us to create your own recipe collection</button>
+    <article class="welcome">
+      <picture class="welcome__img">
+        <img src="{% static 'recipes/images/welcome-img.png' %}"
+          alt="home page image">
+      </picture>
 
+      <div class="welcome__content">
+        <p class="welcome__category">Hello!<br>Welcome to your</p>
+        <h1 class="welcome__title">Recipe Book</h1>
+        <p>Create your own recipe collection or browse the simple and healthy recipes we have prepared for you. </p>
+
+        <div class="flex-group">
+          <button class="button">Log in</button>
+          <button class="button">Register</button>
+        </div>
       </div>
-    </section>
+    </article>
   </main>
 </body>
 </html>
