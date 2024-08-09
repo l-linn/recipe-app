@@ -32,5 +32,7 @@ class Recipe(models.Model):
     ingredient = models.ManyToManyField("recipes.Ingredient")
     methods = models.TextField()
 
+    pic = models.ImageField(upload_to="recipes", default="no_picture.png")
+
     def __str__(self):
         return f"{self.name} - {self.cook} - {self.cooking_time} - {self.difficulty}"

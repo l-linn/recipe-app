@@ -10,5 +10,7 @@ class Cook(models.Model):
         "recipes.Recipe", null=True, related_name="recipes_fav"
     )
 
+    pic = models.ImageField(upload_to="recipes", default="no_picture.png")
+
     def __str__(self):
         return self.user.username

@@ -1,22 +1,30 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Recipe App</title>
+  <link rel="stylesheet" href="{% static 'recipes/css/styles.css' %}">
+  <title>Recipe Book</title>
 </head>
-<body style="background-color:#fff0de">
-  <header >
+<body>
+  <main>
+    <section class="welcome">
+      <div class="greetings">
+        <p>Hello! Welcome to Your Recipe Book</p>
+        <h3>What do you fancy today?</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+          nisi ut aliquip ex ea commodo conse</p>
+      </div>
+      <div class ="user-login-or-register">
+        <button>Log in</button>
+        <button>Join us to create your own recipe collection</button>
 
-  </header>
-  <section >
-    <h1>Welcome!</h1>
-    <h2>What do you fancy today?</h2>
-    <span>Log in</span>
-    <span>Create account</span>
-    
-  </section>
-
-  
+      </div>
+    </section>
+  </main>
 </body>
 </html>
