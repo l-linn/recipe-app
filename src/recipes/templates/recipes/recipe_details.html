@@ -8,8 +8,23 @@
   <title>{{object.name}}</title>
 </head>
 <body>
-  {{object.name}}
-  <img src="{{object.pic.url}}" width="200" height="200" />
-  {{object.cook}} {{object.serves}} {{object.cooking_time}} min
+  <article>
+    
+    <img src="{{object.pic.url}}" width="200" height="200" />
+    <div>
+      <p>
+      {{object.name}}<br>
+      Serves: {{object.serves}}<br>
+      Cooking Time: {{object.cooking_time}} min<br>
+      Difficulty: {{object.difficulty}}<br>
+      Ingredient: {{object.ingredient}}<br>
+      Methods: {{object.methods}}
+      </p>
+
+    </div>
+
+  
+
+  </article>
 </body>
 </html>
