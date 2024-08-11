@@ -67,6 +67,30 @@ body {
 }
 
 
+a {
+  color: var(--clr-primary-400);
+  text-decoration: none;
+}
+
+a:is(:hover, :focus) {
+  color: var(--clr-primary-500);
+}
+
 img {
   border-radius: 20px;
+}
+
+h3 {
+  margin: 20px;
+}
+
+.flex-box {
+  margin: 20px;
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+.flex-item {
+  padding: 10px;
 }
