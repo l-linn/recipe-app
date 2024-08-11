@@ -28,22 +28,23 @@ class Recipe(models.Model):
         ("intermediate", "Intermediate"),
         ("hard", "Hard"),
     )
-    difficulty = models.CharField(max_length=20, choices=difficulty_choice)
+    difficulty = models.CharField(
+        max_length=20, choices=difficulty_choice, editable=False
+    )
 
     def calculate_difficulty(self):
-
         num_ingredients = (
             Ingredient.objects.count()
         )  # How do I get the number of ingredient?
 
         if self.cooking_time < 10 and num_ingredients < 4:
-            return "Easy"
+            self.difficulty = "easy"
         elif self.cooking_time < 10 and num_ingredients >= 4:
-            return "Medium"
+            self.difficulty = "medium"
         elif self.cooking_time >= 10 and num_ingredients < 4:
-            return "Intermediate"
+            self.difficulty = "intermediate"
         else:
-            return "Hard"
+            self.difficulty = "Hard"
 
     serves = models.PositiveIntegerField()
     ingredient = models.ManyToManyField("recipes.Ingredient")

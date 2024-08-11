@@ -8,11 +8,14 @@
   <title>Recipes</title>
 </head>
 <body>
-
+  
+<div>
   {% for object in object_list %} 
   <a href ="{{object.get_absolute_url}}"> {{object.name}} </a>
   <img src="{{object.pic.url}}" width="200" height="200" />
   {% endfor %}
+</div>
+
 
 </body>
 </html>
