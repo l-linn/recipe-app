@@ -11,14 +11,13 @@
   <article>
     <img src="{{object.pic.url}}" width="250" height="250" />
     <div>
-      <p>
-      {{object.name}}<br>
-      Serves: {{object.serves}}<br>
-      Cooking Time: {{object.cooking_time}} min<br>
-      Difficulty: {{object.difficulty}}<br>
-      Ingredient: {{object.display_ingredients}}<br>
-      Methods: {{object.methods|safe}}
-      </p>
+      
+      <h3>{{object.name}}</h3>
+      <p><b>Serves:</b> {{object.serves}}</p>
+      <p><b>Cooking Time:</b> {{object.cooking_time}} min</p>
+      <p><b>Difficulty:</b> {{object.difficulty}}</p>
+      <p><b>Ingredient:</b> {{object.display_ingredients}}</p>
+      <p><b>Methods:</b> {{object.methods|safe}}</p>
     </div>
   </article>
 </body>
