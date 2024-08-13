@@ -58,7 +58,7 @@ body {
   font-family: "Sue Ellen Francisco", cursive;
   font-weight: 400;
   font-style: normal;
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: var(--clr-neutral-400);
   background-color: var(--clr-secondary-200);
   /* for this project only */
@@ -68,21 +68,38 @@ body {
 
 
 a {
-  color: var(--clr-primary-400);
+  color:#3d6781;
   text-decoration: none;
 }
 
 a:is(:hover, :focus) {
-  color: var(--clr-primary-500);
+  color:#ff5858;
 }
 
 img {
   border-radius: 20px;
 }
 
-h3 {
+menu {
+  background-color:#0097b2;
+  padding: 7px;
+  text-align: right;
+}
+
+h2 {
+  text-align: center;
   margin-top: 20px;
-  margin-left: 20px;
+  color: #ff5858;
+}
+
+h3{
+  display: inline;
+  padding-right: 20px;
+  color: #f2ebe3;
+}
+
+h3:is(:hover, :focus) {
+  color: #ff5858;
 }
 
 .flex-box {

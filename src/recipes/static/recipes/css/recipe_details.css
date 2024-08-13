@@ -60,19 +60,54 @@ body {
   font-weight: 400;
   font-style: normal;
   font-size: 1rem;
-  color: var(--clr-neutral-400);
-  background-color: var(--clr-secondary-200);
-  display: grid;
+  color:#3d6781;
+  background-color:#f2ebe3;
   place-content: center;
 }
 
 img {
   border-radius: 20px;
-  margin-bottom: 10px;
+}
+section{
+  position: relative;
 }
 
 article {
-  margin-top: 50px;
-  max-width: 500px;
+  margin-inline: auto;
+  display: grid;
+  margin-top: 80px;
+  max-width: 700px;
+  align-items: center;
+  justify-items: center;
 }
 
+@media (min-width: 600px) {
+  article{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+menu {
+  background-color:#0097b2;
+  padding: 7px;
+  text-align: right;
+}
+
+a {
+  text-decoration: none;
+}
+
+h3{
+  display: inline;
+  padding-right: 20px;
+  color: #f2ebe3;
+}
+
+h3:is(:hover, :focus) {
+  color: #ff5858;
+}
+
+.back-arrow {
+  position: absolute;
+  top: 280px;
+}

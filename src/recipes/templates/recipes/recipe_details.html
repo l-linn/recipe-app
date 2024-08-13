@@ -8,17 +8,34 @@
   <title>{{object.name}}</title>
 </head>
 <body>
-  <article>
-    <img src="{{object.pic.url}}" width="250" height="250" />
-    <div>
+  <menu>
+    <a href ="{%url 'logout'%}"><h3>Log out</h3></a>
+  </menu>
+
+  
+    <article>
+      <section>
+        <img src="{{object.pic.url}}" width="250" height="250" />
+        <div class="back-arrow">
+          <a href ="{%url 'recipe_list'%}">
+            <img src="{% static 'auth/images/arrow-left.svg' %}" alt="back arrow" width="30px" height="30px">
+          </a>
+        </div>
+      </section>
       
-      <h3>{{object.name}}</h3>
-      <p><b>Serves:</b> {{object.serves}}</p>
-      <p><b>Cooking Time:</b> {{object.cooking_time}} min</p>
-      <p><b>Difficulty:</b> {{object.difficulty}}</p>
-      <p><b>Ingredient:</b> {{object.display_ingredients}}</p>
-      <p><b>Methods:</b> {{object.methods|safe}}</p>
-    </div>
-  </article>
+      <div>
+        <h2>* * {{object.name}} * *</h2>
+        <p><b>Serves:</b> {{object.serves}}</p>
+        <p><b>Cooking Time:</b> {{object.cooking_time}} min</p>
+        <p><b>Difficulty:</b> {{object.difficulty}}</p>
+        <p><b>Ingredient:</b> {{object.display_ingredients}}</p><br>
+        <p><b>Methods:</b> {{object.methods|safe}}</p>
+      </div>
+    </article>
+
+
+  
+
+
 </body>
 </html>

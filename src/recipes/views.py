@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView  # to display lists
 from .models import Recipe
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 # Create your views here.
@@ -9,11 +10,11 @@ def recipes_home(request):
     return render(request, "recipes/recipes_home.html")
 
 
-class RecipeListView(ListView):  # class-based view
+class RecipeListView(LoginRequiredMixin, ListView):  # class-based view
     model = Recipe  # specify model
     template_name = "recipes/all_recipes.html"  # specify template
 
 
-class RecipeDetailView(DetailView):
+class RecipeDetailView(LoginRequiredMixin, DetailView):
     model = Recipe
     template_name = "recipes/recipe_details.html"
