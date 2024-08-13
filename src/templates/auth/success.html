@@ -1,11 +1,26 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'auth/css/success.css' %}">
   <title>Log out</title>
 </head>
 <body>
-  Logged out successfully!
+  <article>
+    <img src="{% static 'auth/images/sushi-1.png' %}" alt="sushi logo">
+    
+    <div class="logout-message">
+      <h1 class="flex-item-1">You are logged out successfully!</h1>
+      <p class="flex-item-2">Hopefully see you soon?</p>
+      <div class="flex-item-3">
+        <button class="button"><a href ="{%url 'home'%}">Back to home page</a></button>
+        <button class="button"><a href ="{%url 'login'%}">Log back in</a></button>
+      </div>
+    </div>
+  </article>
+
+
 </body>
 </html>

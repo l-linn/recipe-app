@@ -59,8 +59,8 @@ body {
   font-weight: 400;
   font-style: normal;
   font-size: 1rem;
-  color: var(--clr-neutral-400);
-  background-color: var(--clr-secondary-200);
+  color:#0097b2;
+  background-color:#f2ebe3;
   /* for this project only */
   display: grid;
   place-content: center;
