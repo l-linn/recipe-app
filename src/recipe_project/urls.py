@@ -27,7 +27,7 @@ from apps.recipes.views import RecipeListView
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", recipes_home, name="home"),
-    path("", include("recipes.urls")),
+    path("", include("apps.recipes.urls")),
     path("login/", login_view, name="login"),
     path("success/", logout_view, name="logout"),
     path("recipes/", RecipeListView.as_view(), name="recipe_list"),

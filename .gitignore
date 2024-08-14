@@ -2,3 +2,4 @@ db.sqlite3
 .bak
 .gitattributes
 .DS_store
+.env
