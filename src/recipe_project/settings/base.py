@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     # recipe_project related apps
     "apps.recipes",
     "apps.cooks",
+    "apps.core",
 ]
 
 MIDDLEWARE = [
@@ -106,6 +107,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = "static/"
+STATICFILES_DIRS = [str(BASE_DIR / "static")]
+
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
 
