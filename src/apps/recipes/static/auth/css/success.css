@@ -92,6 +92,7 @@ img {
 
 .button:is(:hover, :focus) {
   background-color:#3d6781;
+  color: #ff5858;
 }
 
 a {

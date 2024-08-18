@@ -12,6 +12,7 @@ class Ingredient(models.Model):
 
 class Recipe(models.Model):
     name = models.CharField(max_length=50)
+
     cook = models.ForeignKey(
         "cooks.Cook",
         on_delete=models.CASCADE,
@@ -21,6 +22,17 @@ class Recipe(models.Model):
     )
     cooking_time = models.IntegerField(
         help_text="Please input how long it takes in minutes"
+    )
+
+    category_choices = (
+        ("V", "V"),
+        ("Ve", "VE"),
+        ("Fish", "Fish"),
+        ("Contains Meat", "Contains Meat"),
+        ("Versatile", "Versatile"),
+    )
+    category = models.CharField(
+        max_length=50, choices=category_choices, default="versatile"
     )
 
     serves = models.PositiveIntegerField()
