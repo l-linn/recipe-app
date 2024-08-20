@@ -1,38 +1,25 @@
+{% extends 'base.html' %} 
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="{% static 'recipes/css/all_recipes.css' %}">
-  <title>Recipes</title>
-</head>
-<body>
+{% block title %}All Recipes{% endblock title %}
+{% block stylesheet %}{{ block.super}}<link rel="stylesheet" href="{% static 'recipes/css/all_recipes.css' %}">{% endblock stylesheet %}
 
-  <nav>
-    <a href="#">All Recipes</a>
-    <a href="">Dashboard</a>
-    <a href="{%url 'search'%}">Search</a>
-    <a href ="{%url 'logout'%}">Log out</a>
-  </nav>
-
-  <header>
-    <h2>* * * All Recipes * * *</h2>
-  </header>
-  <div class="flex-box">
-    {% for object in object_list %}
-    <div class="flex-item">
-      <a href ="{{object.get_absolute_url}}"> <b>{{object.name}} </b></a>
-      <img src="{{object.pic.url}}" width="180" height="180" />
-    </div>
-    {% endfor %}
+{% block content %}
+<nav>
+  <a href="#">All Recipes</a>
+  <a href="">Dashboard</a>
+  <a href="{%url 'search'%}">Search</a>
+  <a href ="{%url 'logout'%}">Log out</a>
+</nav>
+<header>
+  <h2>* * * All Recipes * * *</h2>
+</header>
+<div class="flex-box">
+  {% for object in object_list %}
+  <div class="flex-item">
+    <a href ="{{object.get_absolute_url}}"> <b>{{object.name}} </b></a>
+    <img src="{{object.pic.url}}" width="180" height="180" />
   </div>
-  
-
-
-
-</body>
-</html>
-
-
+  {% endfor %}
+</div>
+{% endblock content %}
 

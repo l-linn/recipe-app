@@ -1,39 +1,27 @@
+{% extends 'base.html' %} 
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="{% static 'recipes/css/search_recipes.css' %}">
-  <title>Search Recipes</title>
-</head>
-
-<body>
-
-  <nav>
-    <a href="{%url 'recipe_list'%}">Back to All Recipes</a>
-    <a href="">Dashboard</a>
-    <a href ="{%url 'logout'%}">Log out</a>
-  </nav>
-
-  <div class="search-form">
-    <form action="" method="POST">
-      {% csrf_token %}
-      {{form}}
-
-      {% if recipes_df %}
-        {{recipes_df|safe}} 
-      {% else %}
-        <p>* * * Please at least elect one option or there is no matching data in our database! * * *</p>
-      {% endif %}
-
-      <button type="submit" >Search</button>
-    </form>
-
-    
-
-  </div>
-
-  
-</body>
-</html>
+{% block title %}Search Recipes{% endblock title %}
+{% block stylesheet %} 
+{{ block.super}}
+<link rel="stylesheet" href="{% static 'recipes/css/search_recipes.css' %}">
+{% endblock stylesheet %}
+{% block content %}
+<nav>
+  <a href="{%url 'recipe_list'%}">Back to All Recipes</a>
+  <a href="">Dashboard</a>
+  <a href ="{%url 'logout'%}">Log out</a>
+</nav>
+<div class="search-form">
+  <form action="" method="POST">
+    {% csrf_token %}
+    {{form}}<br>
+    {% if recipes_df %}
+      {{recipes_df|safe}}<br>
+      <img src="data:image/png;base64, {{chart|safe}}">
+    {% else %}
+      <p>* * * Please at least elect one option or there is no matching data in our database! * * *</p>
+    {% endif %}
+    <button type="submit" >Search</button>
+  </form>
+</div>
+{% endblock content %}

@@ -1,13 +1,14 @@
+{% extends "base.html" %} <!-- Should be first tag-->
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="{% static 'auth/css/success.css' %}">
-  <title>Log out</title>
-</head>
-<body>
+
+{% block title %}Log out{% endblock title %}
+{% block stylesheet %} 
+{{ block.super}}
+<link rel="stylesheet" href="{% static 'auth/css/success.css' %}">
+{% endblock stylesheet %}
+
+
+{% block content %}
   <article>
     <img src="{% static 'auth/images/sushi-1.png' %}" alt="sushi logo">
     
@@ -20,7 +21,4 @@
       </div>
     </div>
   </article>
-
-
-</body>
-</html>
+{% endblock content %}

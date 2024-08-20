@@ -1,40 +1,31 @@
+{% extends 'base.html' %} 
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="{% static 'recipes/css/recipe_details.css' %}">
-  <title>{{object.name}}</title>
-</head>
-<body>
+{% block title %}{{object.name}}{% endblock title %}
+{% block stylesheet %} 
+{{ block.super}}
+<link rel="stylesheet" href="{% static 'recipes/css/recipe_details.css' %}">
+{% endblock stylesheet %}
+
+{% block content %}
   <nav>
     <a href="{%url 'recipe_list'%}">Back to All Recipes</a>
     <a href="">Dashboard</a>
     <a href="{%url 'search'%}">Search</a>
     <a href ="{%url 'logout'%}">Log out</a>
   </nav>
-
-  
-    <article>
-      <section>
-        <img src="{{object.pic.url}}" width="250" height="250" />
-      </section>
-      
-      <div>
-        <h2>* * {{object.name}} * *</h2>
-        <p><b>Category:</b> {{object.category}}</p>
-        <p><b>Serves:</b> {{object.serves}}</p>
-        <p><b>Cooking Time:</b> {{object.cooking_time}} min</p>
-        <p><b>Difficulty:</b> {{object.difficulty}}</p>
-        <p><b>Ingredient:</b> {{object.display_ingredients}}</p><br>
-        <p><b>Methods:</b> {{object.methods|safe}}</p>
-      </div>
-    </article>
-
-
-  
-
-
-</body>
-</html>
+  <article>
+    <section>
+      <img src="{{object.pic.url}}" width="250" height="250" />
+    </section>
+    
+    <div>
+      <h2>* * {{object.name}} * *</h2>
+      <p><b>Category:</b> {{object.category}}</p>
+      <p><b>Serves:</b> {{object.serves}}</p>
+      <p><b>Cooking Time:</b> {{object.cooking_time}} min</p>
+      <p><b>Difficulty:</b> {{object.difficulty}}</p>
+      <p><b>Ingredient:</b> {{object.display_ingredients}}</p><br>
+      <p><b>Methods:</b> {{object.methods|safe}}</p>
+    </div>
+  </article>
+{% endblock content %}

@@ -1,10 +1,10 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView  # to display lists
-from .models import Recipe
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.db.models import Q
 from .forms import RecipeSearchForm
 from .utils import get_chart
-from django.db.models import Q
+from .models import Recipe
 import pandas as pd
 
 
@@ -24,18 +24,19 @@ def search_recipes(request):
     if request.method == "POST":
         recipe_name = request.POST.get("recipe_name")
         chart_type = request.POST.get("chart_type")
-
-        # recipe_category = request.POST.get("category")
+        recipe_category = request.POST.get("recipe_category")
         cooking_time = request.POST.get("cooking_time")
 
         # apply filter to extract data
-        qs = Recipe.objects.filter(Q(name=recipe_name) | Q(cooking_time=cooking_time))
+        qs = Recipe.objects.filter(
+            Q(name=recipe_name)
+            | Q(category=recipe_category)
+            | Q(cooking_time=cooking_time)
+        )
 
         if qs:
             recipes_df = pd.DataFrame(qs.values("name", "cooking_time", "category"))
-            # call get_chart
             chart = get_chart(chart_type, recipes_df, labels=recipes_df["name"].values)
-
             recipes_df = recipes_df.to_html()
 
     # pack up data to be sent to template in the context dictionary
