@@ -1,5 +1,6 @@
 from django.test import TestCase
 from .models import Recipe
+from .forms import RecipeSearchForm
 
 
 # Create your tests here.
@@ -8,7 +9,6 @@ class RecipeTestCase(TestCase):
         Recipe.objects.create(
             name="Tea",
             cooking_time=5,
-            difficulty="easy",  # this is set as a choice
             serves=1,
             methods="boil the water, put the tea in",
         )
@@ -24,4 +24,30 @@ class RecipeTestCase(TestCase):
         self.assertEqual(max_length, 50)
 
 
-# check value
+class SearchRecipeTestCase(TestCase):
+    def setUpTestData():
+        Recipe.objects.create(
+            name="Tea",
+            cooking_time=5,  # this is set as a choice
+            serves=1,
+            category="V",
+            methods="boil the water, put the tea in",
+        )
+
+    def test_recipe_form_field_labels(self):
+        form = RecipeSearchForm()
+        self.assertTrue(
+            form.fields["chart_type"].label is None
+            or form.fields["chart_type"].label == "Chart type"
+        )
+
+    def test_chart_generation(self):
+        form_data = {
+            "recipe_name": "",
+            "cooking_time": 10,
+            "chart_type": "#1",
+            "recipe_category": "V",
+        }
+        response = self.client.get("/search/", form_data)
+        self.assertEqual(response.status_code, 200)
+        self.assertTrue("chart" in response.context)
