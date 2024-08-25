@@ -17,3 +17,5 @@ dev-test:
 
 prod-start:
 	python3 manage.py runserver --settings=recipe_project.settings.prod
+dev-startapp:
+	cd apps && python3 ../manage.py startapp $(app) --settings=recipe_project.settings.prod
