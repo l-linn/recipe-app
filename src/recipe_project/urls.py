@@ -20,7 +20,7 @@ from django.urls import path
 from django.urls import include
 from django.conf import settings
 from django.conf.urls.static import static
-from .views import login_view, logout_view
+from .views import login_view, logout_view, about_me_view
 from apps.recipes.views import recipes_home, search_recipes
 from apps.recipes.views import RecipeListView
 
@@ -31,6 +31,7 @@ urlpatterns = [
     path("", include("apps.recipes.urls")),
     path("login/", login_view, name="login"),
     path("success/", logout_view, name="logout"),
+    path("about/", about_me_view, name="about"),
     path("recipes/", RecipeListView.as_view(), name="recipe_list"),
 ]
 

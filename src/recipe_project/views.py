@@ -45,3 +45,7 @@ def logout_view(request):
     return render(
         request, "auth/success.html"
     )  # after logging out go to login form (or whichever page you want)
+
+
+def about_me_view(request):
+    return render(request, "about.html")

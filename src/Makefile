@@ -14,3 +14,6 @@ dev-install:
 	pip install -r requirements/dev.txt
 dev-test:
 	python3 manage.py test --settings=recipe_project.settings.dev
+
+prod-start:
+	python3 manage.py runserver --settings=recipe_project.settings.prod

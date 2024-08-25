@@ -60,9 +60,12 @@ def search_recipes(request):
             # recipes_df.assign(Difficulty=[])
             recipes_df = recipes_df.to_html()
 
-            for item in qs.values():
-                item_id = item["id"]
-                item_name = item["name"]  # get name of the recipe
+            for q in qs:
+                item_id = q.id
+                item_name = q.name  # get name of the recipe
+                difficulty = q.difficulty()
+
+                # breakpoint()
 
                 recipes_df = recipes_df.replace(  # replace the table-name
                     f"<td>{item_name}</td>",
