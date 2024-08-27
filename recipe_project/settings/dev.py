@@ -8,7 +8,7 @@ environ.Env.read_env(str(BASE_DIR / ".env"))
 SECRET_KEY = env.str("SECRET_KEY")
 DEBUG = env.bool("DEBUG")
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["https://pacific-tor-80142-ffb5d961053d.herokuapp.com/"]
 
 
 # Database
