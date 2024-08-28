@@ -3,7 +3,7 @@ import os
 
 from .base import *
 
-env = environ.Env(DEBUG=(bool, False))
+env = environ.Env(DEBUG=(bool, True))
 environ.Env.read_env(str(BASE_DIR / ".env_prod"))
 
 SECRET_KEY = env.str("SECRET_KEY")
