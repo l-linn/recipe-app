@@ -30,15 +30,20 @@ STATICFILES_STORAGE = "django.contrib.staticfiles.storage.StaticFilesStorage"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "NAME": "dmmf1k2lve5ea",  # database name
+        "USER": "u2qtl6qvrdscu4",  # database user
+        "PASSWORD": "p9929f8f28da996d73df20eefd9c5dafff7ba67ba6706e399bf87184d12d5fc72",  # database password
+        "HOST": "c3nv2ev86aje4j.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com",
+        "PORT": "5432",
     }
 }
-# Heroku: Update database configuration from $DATABASE_URL.
-import dj_database_url
 
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES["default"].update(db_from_env)
+# Heroku: Update database configuration from $DATABASE_URL.
+# import dj_database_url
+
+# db_from_env = dj_database_url.config(conn_max_age=500)
+# DATABASES["default"].update(db_from_env)
 
 CORS_ORIGIN_ALLOW_ALL = True
 
