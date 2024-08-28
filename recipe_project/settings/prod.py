@@ -7,8 +7,8 @@ env = environ.Env(DEBUG=(bool, True))
 environ.Env.read_env(str(BASE_DIR / ".env_prod"))
 
 SECRET_KEY = env.str("SECRET_KEY")
-DEBUG = env.bool("DEBUG")
-DEBUG = False
+# DEBUG = env.bool("DEBUG")
+DEBUG = True
 
 ALLOWED_HOSTS = [".herokuapp.com", "localhost", "127.0.0.1", "0.0.0.0"]
 CSRF_TRUSTED_ORIGINS = [
