@@ -41,6 +41,6 @@ DATABASES["default"].update(db_from_env)
 
 CORS_ORIGIN_ALLOW_ALL = True
 
-# import django_on_heroku
+import django_on_heroku
 
-# django_on_heroku.settings(locals())
+django_on_heroku.settings(locals())
