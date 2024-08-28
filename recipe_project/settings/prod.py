@@ -26,7 +26,7 @@ MIDDLEWARE = ["whitenoise.middleware.WhiteNoiseMiddleware"] + MIDDLEWARE
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+STATICFILES_STORAGE = "django.contrib.staticfiles.storage.StaticFilesStorage"
 
 DATABASES = {
     "default": {
@@ -45,5 +45,4 @@ CORS_ORIGIN_ALLOW_ALL = True
 import django_on_heroku
 
 django_on_heroku.settings(locals())
-
 del DATABASES["default"]["OPTIONS"]["sslmode"]
