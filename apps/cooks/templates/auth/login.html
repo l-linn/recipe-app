@@ -18,8 +18,8 @@
       </a>
     </div>
   {% comment %} add Django security token {% endcomment %}
-  {% csrf_token %}
-  {{form}}
+  
+  {{form}} {% csrf_token %}
   <button type="submit" class="button">Log in</button>
   </form>
 {% endblock content %}
