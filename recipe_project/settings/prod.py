@@ -15,6 +15,7 @@ CSRF_TRUSTED_ORIGINS = [
     "https://localhost",
     "https://127.0.0.1",
     "https://0.0.0.0",
+    "https://pacific-tor-80142-ffb5d961053d.herokuapp.com",
 ]
 
 MIDDLEWARE = ["whitenoise.middleware.WhiteNoiseMiddleware"] + MIDDLEWARE
